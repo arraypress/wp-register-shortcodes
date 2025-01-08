@@ -1,0 +1,50 @@
+{
+  "name": "arraypress/wp-register-roles",
+  "version": "1.0.0",
+  "description": "A comprehensive WordPress roles and capabilities management system with versioning and advanced features",
+  "type": "library",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://github.com/arraypress/wp-register-roles/",
+  "authors": [
+    {
+      "name": "David Sherlock",
+      "homepage": "https://arraypress.com/"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "ArrayPress\\WP\\Register\\": "src/"
+    },
+    "files": [
+      "src/Utilities.php"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "support": {
+    "issues": "https://github.com/arraypress/wp-register-roles/issues",
+    "source": "https://github.com/arraypress/wp-register-roles"
+  },
+  "keywords": [
+    "wordpress",
+    "roles",
+    "capabilities",
+    "permissions",
+    "user-roles",
+    "caps",
+    "access-control",
+    "user-management",
+    "wp-roles",
+    "wp-capabilities",
+    "role-management",
+    "security"
+  ]
+}
