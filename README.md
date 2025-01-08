@@ -30,38 +30,38 @@ Here's a simple example of registering shortcodes:
 
 ```php
 // Define shortcode callbacks
-function display_user_profile($atts) {
-    $defaults = shortcode_atts([
-        'user_id' => get_current_user_id(),
-        'show_avatar' => 'yes'
-    ], $atts);
-    
-    // Shortcode logic here...
-    return 'User profile output';
+function display_user_profile( $atts ) {
+	$defaults = shortcode_atts( [
+		'user_id'     => get_current_user_id(),
+		'show_avatar' => 'yes'
+	], $atts );
+
+	// Shortcode logic here...
+	return 'User profile output';
 }
 
 // Define your shortcodes
 $shortcodes = [
-    'profile' => [
-        'callback' => 'display_user_profile',
-        'attributes' => [
-            'user_id' => '1',
-            'show_avatar' => 'yes'
-        ],
-        'description' => 'Display user profile information'
-    ],
-    'button' => [
-        'callback' => 'display_custom_button',
-        'attributes' => [
-            'text' => 'Click Me',
-            'url' => '',
-            'style' => 'default'
-        ]
-    ]
+	'profile' => [
+		'callback'    => 'display_user_profile',
+		'attributes'  => [
+			'user_id'     => '1',
+			'show_avatar' => 'yes'
+		],
+		'description' => 'Display user profile information'
+	],
+	'button'  => [
+		'callback'   => 'display_custom_button',
+		'attributes' => [
+			'text'  => 'Click Me',
+			'url'   => '',
+			'style' => 'default'
+		]
+	]
 ];
 
 // Register shortcodes with a prefix
-register_shortcodes($shortcodes, 'my_plugin');
+register_shortcodes( $shortcodes, 'my_plugin' );
 
 // The shortcodes would be available as [my_plugin_profile] and [my_plugin_button]
 ```
@@ -76,18 +76,18 @@ use ArrayPress\WP\Register\Shortcodes;
 $shortcodes = Shortcodes::instance();
 
 // Add multiple shortcodes
-$shortcodes->add_shortcodes([
-    'gallery' => [
-        'callback' => 'custom_gallery_handler',
-        'attributes' => ['columns' => '3']
-    ]
-]);
+$shortcodes->add_shortcodes( [
+	'gallery' => [
+		'callback'   => 'custom_gallery_handler',
+		'attributes' => [ 'columns' => '3' ]
+	]
+] );
 
 // Add single shortcode
-$shortcodes->add_shortcode('button', [
-    'callback' => 'custom_button_handler',
-    'attributes' => ['size' => 'large']
-]);
+$shortcodes->add_shortcode( 'button', [
+	'callback'   => 'custom_button_handler',
+	'attributes' => [ 'size' => 'large' ]
+] );
 
 // Install shortcodes
 $shortcodes->install();
@@ -109,10 +109,10 @@ Global helper functions for easy access:
 
 ```php
 // Register shortcodes
-register_shortcodes($shortcodes, 'prefix');
+register_shortcodes( $shortcodes, 'prefix' );
 
 // Unregister shortcodes
-unregister_shortcodes($shortcodes, 'prefix');
+unregister_shortcodes( $shortcodes, 'prefix' );
 ```
 
 ## Advanced Example
@@ -121,56 +121,56 @@ Here's an example showing more advanced usage:
 
 ```php
 class MyPlugin {
-    public function init() {
-        // Define shortcodes
-        $shortcodes = [
-            'team_member' => [
-                'callback' => [$this, 'render_team_member'],
-                'attributes' => [
-                    'name' => '',
-                    'position' => '',
-                    'image' => '',
-                    'social' => ''
-                ],
-                'description' => 'Display team member profile'
-            ],
-            'pricing_table' => [
-                'callback' => [$this, 'render_pricing_table'],
-                'attributes' => [
-                    'plan' => 'basic',
-                    'currency' => 'USD',
-                    'show_features' => 'yes'
-                ],
-                'description' => 'Display pricing table'
-            ]
-        ];
-        
-        // Register with plugin prefix
-        register_shortcodes($shortcodes, 'myplugin');
-    }
-    
-    public function render_team_member($atts, $content = null) {
-        $attributes = shortcode_atts([
-            'name' => '',
-            'position' => '',
-            'image' => '',
-            'social' => ''
-        ], $atts);
-        
-        // Render team member HTML...
-        return $output;
-    }
-    
-    public function render_pricing_table($atts, $content = null) {
-        $attributes = shortcode_atts([
-            'plan' => 'basic',
-            'currency' => 'USD',
-            'show_features' => 'yes'
-        ], $atts);
-        
-        // Render pricing table HTML...
-        return $output;
-    }
+	public function init() {
+		// Define shortcodes
+		$shortcodes = [
+			'team_member'   => [
+				'callback'    => [ $this, 'render_team_member' ],
+				'attributes'  => [
+					'name'     => '',
+					'position' => '',
+					'image'    => '',
+					'social'   => ''
+				],
+				'description' => 'Display team member profile'
+			],
+			'pricing_table' => [
+				'callback'    => [ $this, 'render_pricing_table' ],
+				'attributes'  => [
+					'plan'          => 'basic',
+					'currency'      => 'USD',
+					'show_features' => 'yes'
+				],
+				'description' => 'Display pricing table'
+			]
+		];
+
+		// Register with plugin prefix
+		register_shortcodes( $shortcodes, 'myplugin' );
+	}
+
+	public function render_team_member( $atts, $content = null ) {
+		$attributes = shortcode_atts( [
+			'name'     => '',
+			'position' => '',
+			'image'    => '',
+			'social'   => ''
+		], $atts );
+
+		// Render team member HTML...
+		return $output;
+	}
+
+	public function render_pricing_table( $atts, $content = null ) {
+		$attributes = shortcode_atts( [
+			'plan'          => 'basic',
+			'currency'      => 'USD',
+			'show_features' => 'yes'
+		], $atts );
+
+		// Render pricing table HTML...
+		return $output;
+	}
 }
 ```
 
