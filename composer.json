@@ -1,10 +1,10 @@
 {
-  "name": "arraypress/wp-register-roles",
+  "name": "arraypress/wp-register-shortcuts",
   "version": "1.0.0",
-  "description": "A comprehensive WordPress roles and capabilities management system with versioning and advanced features",
+  "description": "A comprehensive WordPress shortcodes registration and management system",
   "type": "library",
   "license": "GPL-2.0-or-later",
-  "homepage": "https://github.com/arraypress/wp-register-roles/",
+  "homepage": "https://github.com/arraypress/wp-register-shortcuts/",
   "authors": [
     {
       "name": "David Sherlock",
@@ -30,21 +30,19 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "support": {
-    "issues": "https://github.com/arraypress/wp-register-roles/issues",
-    "source": "https://github.com/arraypress/wp-register-roles"
+    "issues": "https://github.com/arraypress/wp-register-shortcuts/issues",
+    "source": "https://github.com/arraypress/wp-register-shortcuts"
   },
   "keywords": [
     "wordpress",
-    "roles",
-    "capabilities",
-    "permissions",
-    "user-roles",
-    "caps",
-    "access-control",
-    "user-management",
-    "wp-roles",
-    "wp-capabilities",
-    "role-management",
-    "security"
+    "shortcodes",
+    "registration",
+    "shortcode-management",
+    "wp-shortcodes",
+    "content",
+    "formatting",
+    "wp-content",
+    "shortcode-system",
+    "content-management"
   ]
 }
